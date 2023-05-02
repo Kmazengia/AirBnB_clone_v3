@@ -11,7 +11,7 @@ from models.amenity import Amenity
 from os import getenv
 
 
-@app_views.route('/places/<place_id>/amenities', methods=['GET'],
+@app_views.route('/api/v1/places/<place_id>/amenities', methods=['GET'],
                  strict_slashes=False)
 def places_amenities(place_id):
     """ Retrieves the list of all Amenities objects in a Place"""
@@ -26,7 +26,7 @@ def places_amenities(place_id):
     return jsonify(l)
 
 
-@app_views.route('/places/<place_id>/amenities/<amenity_id>',
+@app_views.route('/api/v1/places/<place_id>/amenities/<amenity_id>',
                  methods=['DELETE'], strict_slashes=False)
 def del_places_amenities(place_id, amenity_id):
     """ Deletes an Amenity object """
